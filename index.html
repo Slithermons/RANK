@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcane Inspired Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add link to Google Fonts or other font library if needed -->
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <nav class="main-nav">
+                <!-- Navigation links can go here if needed -->
+            </nav>
+            <!-- <button class="contact-btn">CONTACT</button> -->
+            <!-- Use this button for wallet connection -->
+            <button id="connectWalletBtn" class="contact-btn">CONNECT WALLET</button>
+        </header>
+
+        <main class="hero-section">
+            <div class="hero-content">
+                <p class="prod-text">HUNTER REALM™</p>
+                <h1 class="main-title">CHOOSE YOUR PATH</h1>
+                <p class="quote">"THE CHOICE IS YOURS"</p>
+                <p class="quote-sub">WRITE YOUR OWN STORY</p>
+                <a href="https://opensea.io/collection/rankedrealm" target="_blank" class="discover-btn">Mint Scroll</a>
+            </div>
+            <div class="character-area">
+                <!-- Placeholder for character image -->
+                <!-- <img src="path/to/jinx-image.png" alt="Jinx from Arcane"> -->
+            </div>
+             <div class="background-overlay"></div> <!-- For background effects -->
+         </main>
+
+         <!-- Social links moved to footer -->
+
+         <footer class="main-footer">
+             <!-- Removed page indicator span -->
+             <aside class="social-links">
+                 <a href="https://x.com/rankrealmgames" target="_blank" class="social-btn twitter-btn">
+                     <span class="icon-placeholder">T</span> <!-- Placeholder for Twitter Icon -->
+                 </a>
+                 <a href="https://discord.gg/RgPhJQS2" target="_blank" class="social-btn discord-btn">
+                     <span class="icon-placeholder">D</span> <!-- Placeholder for Discord Icon -->
+                 </a>
+              </aside>
+              <div class="footer-links">
+                  <a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a>
+              </div>
+             <p class="copyright">2025 ALL RIGHT RESERVED FOR RANKEDREALM</p>
+         </footer>
+     </div>
+
+    <!-- Full Page Futuristic Dashboard (Hidden Initially) -->
+    <section id="full-dashboard" style="display: none;">
+        <header class="dashboard-header">
+            <h1>GAMER DASHBOARD</h1>
+            <div class="wallet-info-dash">
+                <span>Address: <span id="walletAddressDash"></span></span>
+                <span>Balance: <span id="ronBalanceDash"></span> RON</span>
+            </div>
+            <button id="disconnectBtn">Disconnect</button> <!-- Optional disconnect -->
+        </header>
+        <main class="dashboard-content">
+            <aside class="dashboard-nav">
+                <ul>
+                    <li><a href="#" data-tab="game" class="active">GAME</a></li>
+                    <li><a href="#" data-tab="overview">Overview</a></li>
+                    <li><a href="#" data-tab="inventory">Inventory</a></li>
+                    <li><a href="#" data-tab="stats">Stats</a></li>
+                    <li><a href="#" data-tab="nft">NFTs</a></li>
+                    <li><a href="#" data-tab="settings">Settings</a></li>
+                </ul>
+            </aside>
+            <section class="dashboard-main-area">
+                <!-- Overview Section -->
+                <div class="dashboard-tab-content" id="tab-overview" style="display: none;">
+                    <h2>Overview</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Level</h3>
+                        <p>0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>XP</h3>
+                        <p>0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Achievements</h3>
+                        <p>0%</p>
+                    </div>
+                     <div class="stat-card wallet-display">
+                        <h3>Wallet</h3>
+                        <p>Address: <span id="walletAddressDashCard"></span></p>
+                            <p>RON: <span id="ronBalanceDashCard"></span></p>
+                        </div>
+                    </div>
+                    <!-- More overview content here -->
+                </div>
+
+                <!-- Inventory Section (Placeholder) -->
+                <div class="dashboard-tab-content" id="tab-inventory" style="display: none;">
+                    <h2>Inventory</h2>
+                    <p>Inventory items will be displayed here.</p>
+                </div>
+
+                <!-- Stats Section (Placeholder) -->
+                <div class="dashboard-tab-content" id="tab-stats" style="display: none;">
+                    <h2>Stats</h2>
+                    <p>Detailed stats will be displayed here.</p>
+                </div>
+
+                <!-- NFT Section -->
+                <div class="dashboard-tab-content" id="tab-nft" style="display: none;">
+                    <h2>My NFTs (Contract: 0x86f3...325)</h2>
+                    <a href="https://opensea.io/collection/rankedrealm" target="_blank" class="mint-scroll-btn">MINT SCROLL</a> <!-- Added Mint Scroll Button -->
+                    <div id="nft-display-area" class="nft-grid">
+                        <!-- NFTs will be loaded here by JavaScript -->
+                        <p id="nft-loading-message">Loading NFTs...</p>
+                    </div>
+                </div>
+
+                 <!-- Settings Section (Placeholder) -->
+                 <div class="dashboard-tab-content" id="tab-settings" style="display: none;">
+                    <h2>Settings</h2>
+                    <p>Settings options will be displayed here.</p>
+                 </div>
+
+                <!-- Game Section -->
+                <div class="dashboard-tab-content active" id="tab-game">
+                    <h2>GAME LIST</h2>
+                    <div class="game-content-columns">
+                        <div class="game-column">
+                            <!-- Column 1 Content: Launch Button -->
+                            <img src="img/hunterrealm.png" alt="Launch Game" class="game-launch-image-btn">
+                        </div>
+                        <div class="game-column placeholder-column">
+                            <!-- Column 2 Content: Placeholder -->
+                            <p>RANKEDREALM</p>
+                        </div>
+                        <div class="game-column placeholder-column">
+                            <!-- Column 3 Content: Placeholder -->
+                            <p>RANKEDREALM</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </section>
+
+    <!-- NFT Detail Modal (Hidden Initially) -->
+    <div id="nft-detail-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close-btn">&times;</span>
+            <h3 id="modal-nft-name">NFT Name</h3>
+            <img id="modal-nft-image" src="" alt="NFT Image" style="max-width: 80%; height: auto; margin: 15px auto; display: block;">
+            <p><strong>ID:</strong> <span id="modal-nft-id"></span></p>
+            <p><strong>Description:</strong> <span id="modal-nft-description"></span></p>
+            <!-- Add more details/attributes as needed -->
+            <div id="modal-nft-attributes">
+                <h4>Attributes:</h4>
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Alert Modal (Hidden Initially) -->
+    <div id="game-alert-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close-btn game-alert-close">&times;</span>
+            <h3>Notice</h3>
+            <p>Web Version is still in works. You can try the Discord Version!</p>
+            <div class="modal-actions">
+                <button id="goToDiscordBtn" class="modal-action-btn discord">Go to Discord</button>
+                <button class="modal-action-btn close game-alert-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keep SDK script -->
+    <script src="https://cdn.jsdelivr.net/npm/@roninnetwork/wallet-sdk"></script>
+    <script src="script.js"></script>
+</body>
+</html>

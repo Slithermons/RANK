@@ -1,0 +1,985 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@700&family=Press+Start+2P&display=swap'); /* Added Press Start 2P */
+
+:root {
+    --primary-green: #a8ff00; /* Bright neon green */
+    --dark-background: #0a0a0a; /* Very dark background */
+    --text-color: #e0e0e0; /* Light grey text */
+    --text-muted: #888; /* Muted grey */
+    --border-color: rgba(168, 255, 0, 0.2); /* Faint green border */
+}
+
+/* --- Mobile Responsiveness --- */
+
+@media (max-width: 768px) {
+    body {
+        overflow: auto; /* Allow scrolling on mobile */
+        font-size: 14px; /* Slightly smaller base font */
+    }
+
+    .container {
+        padding: 15px 20px; /* Reduced padding */
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    /* Header Adjustments */
+    .main-header {
+        padding: 10px 0;
+    }
+    .contact-btn { /* Removed .menu-btn from selector */
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    /* Removed .menu-btn rule block */
+
+    /* Hero Section Adjustments */
+    .hero-section {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center;
+        padding: 20px 0;
+    }
+    .hero-content {
+        max-width: 95%; /* Allow content to take more width */
+        order: 1; /* Ensure content comes first */
+    }
+    .main-title {
+        font-size: 3.5rem; /* Significantly smaller title */
+    }
+    .quote {
+        font-size: 1rem;
+    }
+    .quote-sub {
+        font-size: 0.9rem;
+    }
+    .discover-btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+    .character-area {
+        display: none; /* Hide character on smaller screens for simplicity */
+        /* Or alternatively: position: relative; width: 80%; height: 300px; order: 2; margin-top: 20px; */
+    }
+
+    /* Footer Adjustments */
+    .main-footer {
+        flex-direction: column; /* Stack elements */
+        text-align: center;
+        gap: 15px; /* Add space between stacked items */
+        padding: 20px 0;
+    }
+    .social-links {
+        order: 2; /* Social links in the middle */
+    }
+    .footer-links {
+        order: 1; /* Links first */
+        margin-bottom: 10px;
+    }
+     .footer-links a {
+        margin: 0 8px;
+    }
+    .main-footer .copyright {
+        order: 3; /* Copyright last */
+        text-align: center;
+    }
+
+    /* Dashboard Adjustments */
+    #full-dashboard {
+        background-image: none; /* Remove grid pattern on mobile if too busy */
+    }
+    .dashboard-header {
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+    .wallet-info-dash {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+     .wallet-info-dash span {
+        display: block; /* Stack address and balance */
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    #disconnectBtn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .dashboard-content {
+        flex-direction: column; /* Stack nav and main area */
+    }
+    .dashboard-nav {
+        width: 100%; /* Full width nav */
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 0; /* Remove vertical padding */
+        background-color: rgba(10, 10, 10, 0.8); /* Darker background for nav */
+    }
+    .dashboard-nav ul {
+        display: flex; /* Horizontal layout for tabs */
+        justify-content: space-around; /* Distribute tabs */
+        overflow-x: auto; /* Allow scrolling if tabs overflow */
+        padding: 5px 0;
+    }
+    .dashboard-nav li a {
+        padding: 10px 12px; /* Adjust padding */
+        font-size: 0.85rem;
+        border-left: none;
+        border-bottom: 3px solid transparent; /* Use bottom border for active state */
+        white-space: nowrap; /* Prevent wrapping */
+    }
+     .dashboard-nav li a:hover {
+        border-left-color: transparent;
+        border-bottom-color: var(--primary-green);
+        background-color: rgba(168, 255, 0, 0.05);
+    }
+    .dashboard-nav li a.active {
+        border-left-color: transparent;
+        border-bottom-color: var(--primary-green);
+        background-color: rgba(168, 255, 0, 0.15);
+    }
+
+    .dashboard-main-area {
+        padding: 20px 15px; /* Reduced padding */
+    }
+    .dashboard-main-area h2 {
+        font-size: 1.3rem;
+    }
+
+    /* Stats & NFT Grid Adjustments */
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller min size */
+        gap: 15px;
+    }
+    .stat-card {
+        padding: 15px;
+    }
+    .stat-card h3 {
+        font-size: 1rem;
+    }
+    .stat-card p {
+        font-size: 1.3rem;
+    }
+    .stat-card.wallet-display p {
+        font-size: 0.8rem;
+    }
+
+    .nft-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Smaller cards */
+        gap: 15px;
+    }
+    .nft-card {
+        padding: 8px;
+    }
+     .nft-card h4 {
+        font-size: 0.8rem;
+    }
+    .nft-card p {
+        font-size: 0.75rem;
+    }
+    .mint-scroll-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        width: 80%; /* Make button wider */
+        margin-left: auto;
+        margin-right: auto;
+        display: block; /* Center it */
+    }
+
+
+    /* Modal Adjustments */
+    .modal-content {
+        width: 90%;
+        margin: 15% auto; /* Adjust vertical margin */
+        padding: 20px;
+    }
+    .modal-content h3 {
+        font-size: 1.2rem;
+    }
+    #modal-nft-attributes ul {
+        grid-template-columns: 1fr; /* Single column for attributes */
+    }
+}
+
+/* Optional: Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2.8rem; /* Even smaller title */
+    }
+    .dashboard-header h1 {
+        font-size: 1.3rem;
+    }
+    .dashboard-nav li a {
+        font-size: 0.8rem;
+        padding: 8px 10px;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr; /* Single column */
+    }
+     .nft-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Even smaller cards */
+    }
+}
+
+/* Style for the new Mint Scroll button */
+.mint-scroll-btn {
+    display: inline-block; /* Allow margin and padding */
+    background: none;
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 0.9rem; /* Match other dashboard elements */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    letter-spacing: 1px;
+    font-family: 'Press Start 2P', cursive; /* Ensure pixelated font */
+    text-decoration: none; /* Remove underline from link */
+    margin-top: 15px; /* Space below the h2 */
+    margin-bottom: 20px; /* Space above the NFT grid */
+}
+
+.mint-scroll-btn:hover {
+    background-color: var(--primary-green);
+    color: var(--dark-background);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive; /* Pixelated font */
+    background-color: var(--dark-background);
+    background-image: url('img/bg.jpg'); /* Added background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Keep background fixed during scroll */
+    color: var(--text-color);
+    /* overflow: hidden; */ /* Commenting out to allow scrolling if content exceeds viewport with background */
+    min-height: 100vh;
+    position: relative; /* Needed for absolute positioning of children */
+    image-rendering: pixelated; /* Apply pixelation to background/rendered elements */
+    font-smooth: never; /* Disable anti-aliasing */
+    -webkit-font-smoothing: none; /* Disable anti-aliasing for WebKit */
+}
+
+img {
+    image-rendering: pixelated; /* Ensure images are pixelated */
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: crisp-edges; /* Standard */
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header, Main, Footer */
+    grid-template-columns: auto 1fr auto; /* Left padding/indicator, Content, Social links */
+    min-height: 100vh;
+    padding: 20px 40px; /* Overall padding */
+    position: relative;
+    z-index: 2; /* Above background effects */
+}
+
+/* Header */
+.main-header {
+    grid-column: 1 / -1; /* Span all columns */
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-btn { /* Removed .menu-btn from selector */
+    background: none;
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 8px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Press Start 2P', cursive; /* Ensure pixelated font */
+}
+
+/* Removed .menu-btn rule block */
+
+.contact-btn:hover {
+    background-color: var(--primary-green);
+    color: var(--dark-background);
+}
+
+/* Hero Section */
+.hero-section {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Content on left, character on right */
+    position: relative;
+    padding: 40px 0;
+}
+
+.hero-content {
+    max-width: 50%;
+    z-index: 3; /* Above character and background */
+}
+
+.prod-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.main-title {
+    font-family: 'Orbitron', sans-serif; /* Example bold/tech font */
+    font-size: 6rem; /* Large title */
+    color: #fff;
+    margin-bottom: 15px;
+    line-height: 1;
+    text-shadow: 0 0 15px rgba(168, 255, 0, 0.5); /* Subtle green glow */
+}
+
+.quote {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+.quote-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.discover-btn {
+    background: none;
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 12px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    letter-spacing: 1px;
+    font-family: 'Press Start 2P', cursive; /* Ensure pixelated font */
+}
+
+.discover-btn:hover {
+    background-color: var(--primary-green);
+    color: var(--dark-background);
+}
+
+.character-area {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0; /* Adjust as needed */
+    width: 55%; /* Adjust size */
+    z-index: 1;
+    /* Background image for character will go here */
+    background: url('https://via.placeholder.com/600x800/111/a8ff00?text=Character+Placeholder') no-repeat center center; /* Placeholder */
+    background-size: contain;
+    opacity: 0.8; /* Slight transparency */
+}
+
+/* Background Effects */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Add pseudo-elements for glow/patterns later */
+    background: radial-gradient(ellipse at bottom right, rgba(168, 255, 0, 0.15), transparent 60%);
+    z-index: 0;
+}
+
+/* Social Links (Now in Footer) */
+.social-links {
+    /* Removed grid positioning */
+    display: flex;
+    /* flex-direction: column; */ /* Default is row */
+    align-items: center;
+    /* justify-content: center; */ /* Let footer handle spacing */
+    gap: 15px; /* Adjust gap for horizontal layout */
+}
+
+/* Remove styles for 'a' tags inside social-links as they are buttons now */
+
+.social-btn {
+    background: none;
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 8px 12px; /* Slightly smaller padding maybe */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Press Start 2P', cursive; /* Ensure pixelated font */
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Make them circular if desired, or keep square */
+}
+
+.social-btn:hover {
+    background-color: var(--primary-green);
+    color: var(--dark-background);
+}
+
+/* Specific style for Discord button */
+.discord-btn {
+    width: auto; /* Allow width to adjust to content */
+    height: 40px; /* Keep height consistent */
+    padding: 8px 15px; /* Adjust padding for text */
+    border-radius: 5px; /* Make it slightly rectangular */
+    font-size: 0.9rem; /* Slightly smaller font for button text */
+    text-decoration: none; /* Remove underline from link */
+    gap: 8px; /* Space between icon and text */
+}
+
+.discord-btn .icon-placeholder {
+    /* Style the placeholder 'D' */
+    font-weight: bold;
+    display: inline-block;
+/* Add more specific icon styles here if using a real icon font/SVG */
+}
+
+/* Specific style for Twitter button */
+.twitter-btn {
+    width: 40px; /* Keep fixed width like original icon buttons */
+    height: 40px; /* Keep fixed height */
+    padding: 8px; /* Adjust padding if needed */
+    border-radius: 50%; /* Keep it circular */
+    font-size: 1rem; /* Match base social button size */
+    text-decoration: none; /* Remove underline from link */
+    /* Center the icon/text */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.twitter-btn .icon-placeholder {
+    /* Style the placeholder 'T' */
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+/* Footer */
+.main-footer {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    display: flex;
+    justify-content: space-between; /* Keeps elements spaced out */
+    align-items: center;
+    padding: 15px 0; /* Keep vertical padding */
+    border-top: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.page-indicator {
+    /* position: absolute; */ /* Remove absolute positioning */
+    /* left: 40px; */
+    /* bottom: 30px; */
+    /* transform: rotate(-90deg); */ /* Remove rotation */
+    /* transform-origin: left bottom; */
+    white-space: nowrap;
+    /* It will now naturally sit on the left due to flexbox justify-content */
+}
+
+.main-footer .copyright {
+    /* Naturally sits on the right */
+    text-align: right; /* Ensure text aligns right if needed */
+}
+
+.footer-links {
+    /* This will sit between social links and copyright due to flexbox order */
+    text-align: center; /* Center the links within their container */
+    flex-grow: 1; /* Allow it to take up space if needed */
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin: 0 10px; /* Space out the links */
+    font-size: 0.8rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-green);
+    text-decoration: underline;
+}
+
+
+/* Wallet Dashboard Styling (adjust as needed) */
+#dashboard {
+    border: 1px solid var(--primary-green);
+    box-shadow: 0 0 10px rgba(168, 255, 0, 0.3);
+}
+#dashboard h2 {
+    color: var(--primary-green);
+    font-size: 1rem;
+    margin-bottom: 5px;
+    border: none;
+}
+#dashboard p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 3px;
+}
+#dashboard span {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* Hide original connect button section if not used */
+#wallet-connection {
+    display: none;
+}
+
+/* Re-style connect button if used in header */
+#connectWalletBtn.contact-btn {
+     /* Inherits .contact-btn styles */
+     /* Add specific overrides if needed */
+}
+
+
+/* Futuristic Dashboard Styles */
+#full-dashboard {
+    position: fixed; /* Overlay the homepage */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-background);
+    z-index: 10; /* Above homepage container */
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+    font-family: 'Press Start 2P', cursive; /* Ensure pixelated font */
+    /* Add a subtle background pattern or effect if desired */
+    background-image: linear-gradient(rgba(168, 255, 0, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(168, 255, 0, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(10, 10, 10, 0.8); /* Slightly different background */
+}
+
+.dashboard-header h1 {
+    font-family: 'Press Start 2P', cursive; /* Ensure pixelated font */
+    color: var(--primary-green);
+    font-size: 1.8rem; /* Keep size */
+    text-shadow: 0 0 8px rgba(168, 255, 0, 0.6);
+}
+
+.wallet-info-dash {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.wallet-info-dash span {
+    margin-left: 15px;
+}
+
+.wallet-info-dash span span { /* Target the actual value spans */
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+/* Style for the game launch image button */
+.game-launch-image-btn {
+    display: block; /* Needed for margin auto centering */
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    width: 80%; /* Default width */
+    max-width: 500px; /* Set a max width for larger screens */
+    margin: 30px auto; /* Center the image horizontally with top/bottom margin */
+    cursor: pointer; /* Indicate it's clickable */
+    border: 2px solid transparent; /* Add transparent border for hover effect space */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 0 10px rgba(168, 255, 0, 0.2); /* Subtle glow */
+    image-rendering: pixelated; /* Ensure pixelation if the source image isn't */
+}
+
+.game-launch-image-btn:hover {
+    transform: scale(1.03); /* Slightly enlarge on hover */
+    border-color: var(--primary-green); /* Add border highlight on hover */
+    box-shadow: 0 0 20px rgba(168, 255, 0, 0.4); /* Enhanced glow */
+    /* Adjust margin for column layout if needed */
+    margin: 15px auto; /* Reduced top/bottom margin slightly */
+}
+
+/* Game Tab Content Column Layout */
+.game-content-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+    gap: 25px; /* Space between columns */
+    margin-top: 20px; /* Space below the H2 title */
+    align-items: start; /* Align items to the start of the grid cell */
+}
+
+.game-column {
+    /* Basic styling for columns */
+    padding: 15px;
+    border: 1px dashed var(--border-color); /* Dashed border for placeholders */
+    border-radius: 5px;
+    min-height: 150px; /* Ensure columns have some minimum height */
+    display: flex;
+    flex-direction: column; /* Stack content vertically within column */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    text-align: center;
+}
+
+.game-column:first-child {
+    /* Remove border/padding from the first column containing the image button */
+    border: none;
+    padding: 0;
+    min-height: auto; /* Let the image define the height */
+    justify-content: flex-start; /* Align image to the top */
+}
+
+.placeholder-column {
+    /* Specific styling for placeholder columns */
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Ensure image button takes full width of its column */
+.game-column .game-launch-image-btn {
+    width: 100%; /* Take full width of the column */
+    margin: 0; /* Remove auto margins */
+    max-width: 100%; /* Override previous max-width if needed */
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 20; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    backdrop-filter: blur(5px); /* Optional blur effect */
+}
+
+.modal-content {
+    background-color: var(--dark-background);
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 30px;
+    border: 1px solid var(--primary-green);
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Maximum width */
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(168, 255, 0, 0.3);
+    color: var(--text-color);
+}
+
+.modal-close-btn {
+    color: var(--text-muted);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    color: var(--primary-green);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    color: var(--primary-green);
+    font-family: 'Press Start 2P', cursive; /* Ensure pixelated font */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.modal-content p strong {
+    color: var(--primary-green);
+}
+
+#modal-nft-attributes h4 {
+    color: var(--primary-green);
+    font-size: 1rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+#modal-nft-attributes ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+#modal-nft-attributes li {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+}
+
+#modal-nft-attributes li strong {
+    color: var(--primary-green);
+    display: block; /* Trait type on its own line */
+    margin-bottom: 3px;
+    font-size: 0.8rem;
+}
+
+/* Modal Action Buttons */
+.modal-actions {
+    margin-top: 25px; /* Space above buttons */
+    padding-top: 15px; /* Space below content */
+    border-top: 1px solid var(--border-color); /* Separator line */
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 15px; /* Space between buttons */
+}
+
+.modal-action-btn {
+    background: none;
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 5px;
+}
+
+.modal-action-btn:hover {
+    background-color: var(--primary-green);
+    color: var(--dark-background);
+}
+
+.modal-action-btn.close {
+    border-color: var(--text-muted);
+    color: var(--text-muted);
+}
+
+.modal-action-btn.close:hover {
+    background-color: var(--text-muted);
+    color: var(--dark-background);
+}
+
+/* Styles for Tab Content Sections */
+.dashboard-tab-content {
+    display: none; /* Hide all tabs by default */
+}
+
+.dashboard-tab-content.active {
+    display: block; /* Show the active tab */
+}
+
+
+/* NFT Grid Styles */
+.nft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.nft-card {
+    background-color: rgba(30, 30, 30, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure content fits */
+}
+
+.nft-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(168, 255, 0, 0.25);
+}
+
+.nft-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: rgba(0,0,0,0.3); /* Placeholder background for image */
+}
+
+.nft-card h4 {
+    font-size: 0.9rem;
+    color: var(--primary-green);
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nft-card p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+#nft-loading-message {
+    grid-column: 1 / -1; /* Span full grid width */
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+
+#disconnectBtn {
+    background: none;
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Press Start 2P', cursive; /* Ensure pixelated font */
+}
+
+#disconnectBtn:hover {
+    background-color: var(--primary-green);
+    color: var(--dark-background);
+}
+
+.dashboard-content {
+    display: flex;
+    flex-grow: 1; /* Take remaining height */
+    overflow: hidden; /* Prevent internal scroll */
+}
+
+.dashboard-nav {
+    width: 200px; /* Fixed width for nav */
+    border-right: 1px solid var(--border-color);
+    padding: 20px 0;
+    background-color: rgba(10, 10, 10, 0.5);
+}
+
+.dashboard-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-nav li a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1rem;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.dashboard-nav li a:hover {
+    color: var(--primary-green);
+    background-color: rgba(168, 255, 0, 0.05);
+    border-left-color: var(--primary-green);
+}
+
+.dashboard-nav li a.active {
+    color: var(--primary-green);
+    font-weight: bold;
+    border-left-color: var(--primary-green);
+    background-color: rgba(168, 255, 0, 0.1);
+}
+
+.dashboard-main-area {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.dashboard-main-area h2 {
+    font-family: 'Press Start 2P', cursive; /* Ensure pixelated font */
+    color: var(--primary-green);
+    font-size: 1.5rem; /* Keep size */
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: rgba(20, 20, 20, 0.7); /* Darker card background */
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(168, 255, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(168, 255, 0, 0.2);
+}
+
+
+.stat-card h3 {
+    font-family: 'Press Start 2P', cursive; /* Ensure pixelated font */
+    color: var(--primary-green);
+    font-size: 1.1rem; /* Keep size */
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 1.5rem; /* Larger stat value */
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.stat-card.wallet-display p {
+    font-size: 0.9rem; /* Smaller text for wallet details */
+    color: var(--text-muted);
+    font-weight: normal;
+    word-break: break-all; /* Wrap long addresses */
+    text-align: left;
+    margin-top: 5px;
+}
+.stat-card.wallet-display span {
+    color: var(--primary-green);
+    font-weight: bold;
+}
