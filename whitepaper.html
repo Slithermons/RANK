@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunter Realm - Whitepaper</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Added Chart.js -->
+    <!-- Inline styles removed - will be added to style.css -->
+</head>
+<body>
+    <div class="whitepaper-container"> <!-- Added container div -->
+        <header>
+            <!-- Navigation might go here, potentially copied from index.html later -->
+            <h1>Hunter Realm Whitepaper</h1>
+        </header>
+        <main>
+            <section id="executive-summary">
+            <h2>Executive Summary</h2>
+            <p>Hunter Realm is a play-to-airdrop Web3 MMORPG built on the principles of player agency and community-driven growth. Players forge their own destinies across six diverse kingdoms, engaging in quests, bounties, and dynamic portal events managed via a familiar Discord interface. The game features a unique "choose-your-path" system where character stats and class evolve based on player actions. NFTs, including Heroes, Weapons, Armor, Mounts, and rare Portal Artefacts, are earned through gameplay via a free-mint airdrop system, granting tangible utility and ownership. Hunter Realm's tokenomics are deeply integrated with the vibrant tama.meme ecosystem, dedicating 90% of the total token supply to fuel community engagement, viral marketing, and liquidity initiatives. An additional 8% rewards player activity through the play-to-airdrop system, while 2% is allocated to a DAO-controlled treasury for strategic growth and stability. This whitepaper details the vision, mechanics, tokenomics, and roadmap for Hunter Realm, outlining its path to becoming a leading community-owned Web3 gaming experience.</p>
+        </section>
+
+        <section id="vision-concepts">
+            <h2>Vision & Core Concepts</h2>
+            <p>Hunter Realm is founded on the vision of "Freedom to forge destiny." We empower players to define their own journey within a rich, evolving world. The narrative unfolds across six distinct kingdoms, each with its unique lore, challenges, and opportunities, all connected through a central, mysterious Portal. Character progression is dynamic; stats and potential class archetypes evolve based on the player's choices, actions, and accomplishments, moving beyond rigid, predefined paths.</p>
+        </section>
+
+        <section id="gameplay-mechanics">
+            <h2>Gameplay Mechanics</h2>
+            <p>The core gameplay loop is accessible directly through Discord. Players initiate their adventure using the `/begin` command and interact with the game world through quests, bounties, and spontaneous portal events. An AI Dungeon-Master enhances the experience by providing dynamic narrative elements and adapting challenges. Hunter Realm supports both active and idle gameplay; players can engage deeply in quests or benefit from passive resource generation and progression, catering to various playstyles.</p>
+        </section>
+
+        <section id="economy-tokenomics">
+            <h2>Economy & Tokenomics</h2>
+            <p><strong>Token Name / Symbol:</strong> PORTAL</p>
+            <p><strong>Total Supply:</strong> 1B</p>
+            <h3>Allocation Breakdown:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pool</th>
+                        <th>% of Supply</th>
+                        <th>Purpose</th>
+                        <th>Vesting / Unlocks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>tama.meme Ecosystem</td>
+                        <td>90%</td>
+                        <td>Community distribution via meme contests, liquidity mining, viral campaigns; encourages social engagement & liquidity</td>
+                        <td>Community-governed; release curve [define]</td>
+                    </tr>
+                    <tr>
+                        <td>Play-to-Earn / Reward System</td>
+                        <td>8%</td>
+                        <td>Daily quests, seasonal airdrops, leaderboard prizes</td>
+                        <td>Linear over 48 months</td>
+                    </tr>
+                    <tr>
+                        <td>Treasury</td>
+                        <td>2%</td>
+                        <td>Liquidity, strategic partnerships, emergency fund</td>
+                        <td>DAO-controlled; 12-month cliff → 36-month linear</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Token Utilities:</h3>
+            <ul>
+                <li><strong>Governance:</strong> Participate in DAO decisions regarding treasury allocation and game direction.</li>
+                <li><strong>In-Game Fees:</strong> Used for specific actions, crafting, or marketplace transactions (details TBD).</li>
+                <li><strong>Staking Boosts:</strong> Stake tokens to enhance NFT performance or earning potential.</li>
+                <li><strong>Portal Access:</strong> May require tokens for entry into special events or high-tier zones.</li>
+            </ul>
+            <h3>Token Allocation Chart:</h3>
+            <div class="chart-container">
+                 <canvas id="tokenomicsPieChart"></canvas>
+            </div>
+        </section>
+
+        <section id="nft-framework">
+            <h2>NFT Framework</h2>
+            <p>Hunter Realm features five core NFT types: Hero, Weapon, Armor, Mount, and ultra-rare 1/1 Portal Artefacts. These NFTs are not sold but earned exclusively through the play-to-airdrop program by accumulating points. They represent true ownership and provide tangible in-game benefits and utility. The free-mint model ensures fair access and rewards active participation.</p>
+            <h3>Buyback</h3>
+            <p>60% OF TOTAL NFT SALES WILL RETURN TO COMMUNITY VIA BUY BACK</p>
+        </section>
+
+        <section id="play-to-airdrop">
+            <h2>Play-to-Airdrop Program</h2>
+            <p>The play-to-airdrop system rewards engagement. Players earn points through quests, referrals, community participation, and special events. These points directly translate into eligibility for NFT mints and potential token airdrops. The system incorporates referral boosts to encourage community growth and employs anti-bot measures (e.g., self-transfer wallet verification) to ensure fairness.</p>
+        </section>
+
+        <section id="technology-stack">
+            <h2>Technology Stack</h2>
+            <ul>
+                <li><strong>Blockchain:</strong> Ronin EVM (for scalability and low transaction fees)</li>
+                <li><strong>Wallet Verification:</strong> Self-transfer mechanism for bot prevention</li>
+                <li><strong>Game Interface:</strong> Discord Bot (Python)</li>
+                <li><strong>Randomness:</strong> Chainlink VRF (or similar verifiable random function for fair loot/event outcomes)</li>
+            </ul>
+        </section>
+
+        <section id="roadmap">
+            <h2>Roadmap</h2>
+            <ul>
+                <li><strong>Q3 2025:</strong> Alpha Launch (Core mechanics, Discord bot, initial kingdoms)</li>
+                <li><strong>Q4 2025:</strong> Beta Launch (NFT minting, expanded quests, P2A system refinement)</li>
+                <li><strong>Q1 2026:</strong> Mainnet Launch (Token generation event, full P2A integration, tama.meme campaigns)</li>
+                <li><strong>Q2 2026:</strong> Mobile Companion App (Idle gameplay, notifications)</li>
+                <li><strong>Q3 2026:</strong> DAO Launch (Initial governance framework, treasury control)</li>
+                <li><strong>Q4 2026 onwards:</strong> Tama.meme Ecosystem Expansion (Cross-promotions, shared liquidity initiatives)</li>
+            </ul>
+        </section>
+
+        <section id="governance-dao">
+            <h2>Governance & DAO</h2>
+            <p>Hunter Realm will transition from initial developer leadership to a fully decentralized autonomous organization (DAO). Token holders will govern the ecosystem, proposing and voting on treasury expenditures, strategic partnerships, and future game development priorities. Clear quorum thresholds and proposal mechanisms will ensure transparent and effective community governance.</p>
+        </section>
+
+        <section id="risk-analysis">
+            <h2>Risk Analysis</h2>
+            <ul>
+                <li><strong>Smart Contract Exploits:</strong> Mitigation through rigorous audits, bug bounties, and protocol monitoring.</li>
+                <li><strong>Meme Token Volatility:</strong> Mitigation by tying utility directly to gameplay and fostering a strong core community beyond speculative trading. Emphasis on the tama.meme ecosystem's broader utility.</li>
+                <li><strong>Regulatory Uncertainty:</strong> Mitigation by consulting legal experts, focusing on utility over investment, and adapting to evolving regulations.</li>
+            </ul>
+        </section>
+        <!-- Removed Team, Legal, and Appendices sections -->
+    </main>
+    <footer>
+        <!-- Footer content might go here, potentially copied from index.html later -->
+        <p>&copy; 2025 Hunter Realm. All rights reserved.</p>
+    </footer>
+    </div> <!-- Close container div -->
+    <script src="script.js"></script>
+
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('tokenomicsPieChart').getContext('2d');
+            const tokenomicsPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: [
+                        'tama.meme Ecosystem (90%)',
+                        'Play-to-Earn / Reward System (8%)',
+                        'Treasury (2%)'
+                    ],
+                    datasets: [{
+                        label: 'Token Allocation',
+                        data: [90, 8, 2],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.8)', // Blue
+                            'rgba(255, 206, 86, 0.8)', // Yellow
+                            'rgba(75, 192, 192, 0.8)'  // Green
+                            // Add more colors if needed, or use a color generation function
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Hunter Realm Token Allocation'
+                        },
+                        tooltip: {
+                             callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

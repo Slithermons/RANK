@@ -602,6 +602,154 @@ img {
     font-weight: bold;
 }
 
+/* --- Whitepaper Page Styles --- */
+
+.whitepaper-container {
+    max-width: 950px; /* Slightly wider */
+    margin: 30px auto; /* More vertical margin */
+    padding: 35px;
+    background-color: rgba(10, 10, 10, 0.85); /* Use dark background with some transparency */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(168, 255, 0, 0.15); /* Subtle green glow */
+    font-family: 'Roboto', sans-serif; /* Use a more readable font for body text */
+    line-height: 1.7;
+    color: var(--text-color); /* Ensure default text color is light */
+}
+
+/* Apply pixel font only to headings in whitepaper for readability */
+.whitepaper-container h1,
+.whitepaper-container h2,
+.whitepaper-container h3,
+.whitepaper-container h4 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--primary-green); /* Neon green headings */
+}
+
+.whitepaper-container header h1 {
+    text-align: center;
+    font-size: 2rem; /* Adjust size */
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    text-shadow: 0 0 8px rgba(168, 255, 0, 0.5);
+}
+
+.whitepaper-container main section {
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed var(--border-color); /* Dashed separator */
+}
+
+.whitepaper-container main section:last-child {
+    border-bottom: none;
+}
+
+.whitepaper-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.whitepaper-container h3 {
+    font-size: 1.2rem;
+    color: #eee; /* Slightly off-white for sub-headings */
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.whitepaper-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9rem; /* Slightly smaller table font */
+}
+
+.whitepaper-container th,
+.whitepaper-container td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: left;
+    vertical-align: top; /* Align content top */
+}
+
+.whitepaper-container th {
+    background-color: rgba(168, 255, 0, 0.1); /* Faint green header */
+    color: var(--primary-green);
+    font-family: 'Press Start 2P', cursive; /* Pixel font for table headers */
+    font-size: 0.85rem;
+}
+
+.whitepaper-container ul {
+    padding-left: 25px;
+    list-style-type: square; /* Different list style */
+}
+
+.whitepaper-container li {
+    margin-bottom: 10px;
+}
+
+.whitepaper-container strong {
+    color: var(--primary-green); /* Highlight strong text */
+    font-weight: normal; /* Override default bold if needed */
+}
+
+.whitepaper-container a {
+    color: var(--primary-green); /* Neon green links */
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.whitepaper-container a:hover {
+    color: #fff; /* White on hover */
+    text-decoration: none;
+}
+
+/* Styling for the chart container */
+.whitepaper-container .chart-container {
+    width: 95%;
+    max-width: 500px; /* Larger chart */
+    margin: 40px auto; /* More margin */
+    padding: 25px;
+    border: 2px solid var(--primary-green); /* Prominent green border */
+    border-radius: 8px;
+    background-color: rgba(10, 10, 10, 0.7); /* Dark background */
+    box-shadow: 0 0 15px rgba(168, 255, 0, 0.2);
+}
+
+/* Ensure chart text is readable */
+.whitepaper-container .chart-container .chartjs-render-monitor {
+    /* Styles for the canvas itself if needed */
+}
+
+/* Chart.js specific overrides for text color */
+.whitepaper-container .chartjs-legend li span,
+.whitepaper-container .chartjs-plugins-title {
+    color: var(--text-color) !important; /* Light text for legend/title */
+    font-family: 'Roboto', sans-serif !important; /* Readable font */
+}
+
+.whitepaper-container .chartjs-tooltip {
+    color: var(--dark-background) !important; /* Dark tooltip text */
+    background-color: rgba(224, 224, 224, 0.95) !important; /* Light tooltip background */
+    font-family: 'Roboto', sans-serif !important; /* Readable font */
+    border: 1px solid var(--primary-green);
+    border-radius: 4px;
+    padding: 8px 12px !important;
+}
+.whitepaper-container .chartjs-tooltip-key {
+    /* Style the color swatch in tooltip if needed */
+}
+
+
+.whitepaper-container footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
 /* Style for the game launch image button */
 .game-launch-image-btn {
     display: block; /* Needed for margin auto centering */
